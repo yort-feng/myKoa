@@ -12,6 +12,8 @@ module.exports = class Application extends EventEmitter {
   }
 
   callback() {
-    return this.callbackFn();
+    return (req, res) => {
+      this.callbackFn(req, res);
+    };
   }
 };
