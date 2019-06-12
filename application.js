@@ -31,7 +31,7 @@ module.exports = class Application extends EventEmitter {
       const ctx = this.createContext(req, res);
       const fnMiddleware = compose(this.middlewares);
       const handleResponse = () => responseBody(ctx);
-      fnMiddleware(ctx).then(handleResponse);
+      fnMiddleware(ctx).then(handleResponse).catch(ctx.onerror);
     };
   }
 

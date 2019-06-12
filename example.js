@@ -9,4 +9,3 @@ app.use((req, res) => {
 app.listen(8000, () => {
   console.log('Application is running and listening to 8000');
 });
-
